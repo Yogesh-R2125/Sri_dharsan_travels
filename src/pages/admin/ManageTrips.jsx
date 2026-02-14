@@ -33,7 +33,8 @@ export default function ManageTrips() {
         <button onClick={handleOpenAdd} className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-dark transition-colors text-sm"><FiPlus /> Add New Trip</button>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto">
+      {/* Desktop table */}
+      <div className="hidden md:block bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto">
         <table className="w-full text-sm">
           <thead><tr className="border-b border-gray-100 text-left">
             <th className="px-5 py-3 font-semibold text-gray-500">Trip</th>
@@ -64,6 +65,30 @@ export default function ManageTrips() {
           </tbody>
         </table>
       </div>
+      {/* Mobile cards */}
+      <div className="md:hidden space-y-3">
+        {trips.map(trip => (
+          <div key={trip.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
+            <div className="flex items-center gap-3 mb-3">
+              <img src={trip.image} alt={trip.title} className="w-12 h-12 rounded-lg object-cover" />
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-sm truncate">{trip.title}</h3>
+                <p className="text-xs text-gray-500">{trip.from} &rarr; {trip.to}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-xs mb-3">
+              <div><span className="text-gray-400">Distance:</span> <span className="font-medium">{trip.distance}</span></div>
+              <div><span className="text-gray-400">Vehicle:</span> <span className="font-medium">{trip.vehicleType}</span></div>
+              <div><span className="text-gray-400">Price:</span> <span className="font-medium">&#8377;{trip.price}</span></div>
+              <div><span className="text-gray-400">Offer:</span> {trip.isOffer ? <span className="text-green-700 font-semibold">&#8377;{trip.offerPrice}</span> : <span className="text-gray-400">None</span>}</div>
+            </div>
+            <div className="flex gap-2 border-t border-gray-100 pt-3">
+              <button onClick={() => handleOpenEdit(trip)} className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-blue-600 bg-blue-50 text-xs font-semibold"><FiEdit2 /> Edit</button>
+              <button onClick={() => handleDelete(trip.id)} className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-red-600 bg-red-50 text-xs font-semibold"><FiTrash2 /> Delete</button>
+            </div>
+          </div>
+        ))}
+      </div>
 
       {showForm && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setShowForm(false)}>
@@ -74,15 +99,15 @@ export default function ManageTrips() {
             </div>
             <form className="p-6 space-y-4" onSubmit={handleSubmit}>
               <div><label className="block text-sm font-medium mb-1">Trip Title *</label><input type="text" required value={form.title} onChange={e => setForm({...form,title:e.target.value})} placeholder="e.g., Coimbatore to Ooty" className={inputCls} /></div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div><label className="block text-sm font-medium mb-1">From *</label><input type="text" required value={form.from} onChange={e => setForm({...form,from:e.target.value})} placeholder="Coimbatore" className={inputCls} /></div>
                 <div><label className="block text-sm font-medium mb-1">To *</label><input type="text" required value={form.to} onChange={e => setForm({...form,to:e.target.value})} placeholder="e.g., Chennai" className={inputCls} /></div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div><label className="block text-sm font-medium mb-1">Distance</label><input type="text" value={form.distance} onChange={e => setForm({...form,distance:e.target.value})} placeholder="e.g., 505 km" className={inputCls} /></div>
                 <div><label className="block text-sm font-medium mb-1">Duration</label><input type="text" value={form.duration} onChange={e => setForm({...form,duration:e.target.value})} placeholder="e.g., 8 hours" className={inputCls} /></div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div><label className="block text-sm font-medium mb-1">Vehicle Type</label><select value={form.vehicleType} onChange={e => setForm({...form,vehicleType:e.target.value})} className={inputCls}><option value="Sedan">Sedan</option><option value="SUV">SUV</option><option value="Tempo Traveller">Tempo Traveller</option></select></div>
                 <div><label className="block text-sm font-medium mb-1">Price *</label><input type="number" required value={form.price} onChange={e => setForm({...form,price:e.target.value})} placeholder="e.g., 4500" className={inputCls} /></div>
               </div>

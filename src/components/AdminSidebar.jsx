@@ -27,7 +27,7 @@ export default function AdminSidebar() {
         {isOpen ? <FiX /> : <FiMenu />}
       </button>
 
-      <aside className={`w-[260px] bg-dark text-white flex flex-col fixed top-0 bottom-0 left-0 z-[1000] transition-transform duration-300 max-md:${isOpen ? 'translate-x-0' : '-translate-x-full'}`} style={!isOpen ? {transform: 'translateX(0)'} : undefined}>
+      <aside className={`w-[260px] bg-dark text-white flex flex-col fixed top-0 bottom-0 left-0 z-[1000] transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
         <div className="flex items-center gap-2.5 px-6 py-5 border-b border-white/10 text-lg font-bold max-md:hidden">
           <FaCar className="text-accent text-xl" />
           <span>Admin Panel</span>
