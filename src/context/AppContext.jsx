@@ -1,6 +1,22 @@
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 
 const AppContext = createContext();
+
+// localStorage helpers
+const loadFromStorage = (key, fallback) => {
+  try {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : fallback;
+  } catch {
+    return fallback;
+  }
+};
+
+const saveToStorage = (key, value) => {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch { /* ignore quota errors */ }
+};
 
 const initialTrips = [
   {
@@ -124,10 +140,18 @@ const initialEnquiries = [
 ];
 
 export function AppProvider({ children }) {
-  const [trips, setTrips] = useState(initialTrips);
-  const [enquiries, setEnquiries] = useState(initialEnquiries);
-  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
-  const [unreadCount, setUnreadCount] = useState(1);
+  const [trips, setTrips] = useState(() => loadFromStorage('sdt_trips', initialTrips));
+  const [enquiries, setEnquiries] = useState(() => loadFromStorage('sdt_enquiries', initialEnquiries));
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(() => loadFromStorage('sdt_admin', false));
+  const [unreadCount, setUnreadCount] = useState(() => {
+    const stored = loadFromStorage('sdt_enquiries', initialEnquiries);
+    return stored.filter(e => e.status === 'new').length;
+  });
+
+  // Persist trips & enquiries to localStorage on every change
+  useEffect(() => { saveToStorage('sdt_trips', trips); }, [trips]);
+  useEffect(() => { saveToStorage('sdt_enquiries', enquiries); }, [enquiries]);
+  useEffect(() => { saveToStorage('sdt_admin', isAdminLoggedIn); }, [isAdminLoggedIn]);
 
   const addTrip = useCallback((trip) => {
     setTrips(prev => [...prev, { ...trip, id: Date.now(), active: true }]);

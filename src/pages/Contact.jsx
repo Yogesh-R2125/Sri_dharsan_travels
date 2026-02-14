@@ -74,7 +74,7 @@ export default function Contact() {
             <h2 className="font-display text-3xl max-md:text-2xl font-bold mb-2">Find <span className="text-accent">Us</span></h2>
             <p className="text-gray-500">Visit our office in Coimbatore</p>
           </div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125323.41088285878!2d76.88609867812502!3d11.01683805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f461b59%3A0x895e4400c6e04ecc!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1697100000000!5m2!1sen!2sin" width="100%" height="400" style={{border:0,borderRadius:'12px'}} allowFullScreen="" loading="lazy" title="Sri Dharsan Location" />
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.856819446655!2d77.01709887481051!3d11.147206189024985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f900332bdb93%3A0x951f2358ec14f86e!2sSRI%20DHARSAN%20TOURS%20AND%20TRAVELS!5e1!3m2!1sen!2sin!4v1771050121076!5m2!1sen!2sin" width="100%" height="400" style={{border:0,borderRadius:'12px'}} allowFullScreen="" loading="lazy" title="Sri Dharsan Location" ce/>
         </div>
       </section>
     </div>
