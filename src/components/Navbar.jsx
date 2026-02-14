@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Bar */}
+      {/* Top Bar
       <div className="bg-dark text-gray-300 text-[0.82rem] py-2">
         <div className="max-w-7xl mx-auto px-5 flex justify-between items-center flex-wrap gap-2">
           <div className="flex items-center gap-5">
@@ -31,7 +31,7 @@ export default function Navbar() {
             <span className="flex items-center gap-1.5"><FiMapPin /> Coimbatore, Tamil Nadu</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navbar */}
       <nav className="bg-white sticky top-0 z-50 shadow-md">
