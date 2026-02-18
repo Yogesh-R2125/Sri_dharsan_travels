@@ -12,7 +12,7 @@ export default function Footer() {
               <FaCar className="text-2xl text-accent" />
               <h3 className="text-white font-display text-lg">Sri Dharsan Tour & Travels</h3>
             </div>
-            <p className="text-sm leading-7 mb-4">Your trusted travel partner in Coimbatore since 2010. We provide reliable, comfortable, and affordable taxi services for all your travel needs.</p>
+            <p className="text-sm leading-7 mb-4">Your reliable travel partner in Coimbatore since 2010. We provide reliable, comfortable, and affordable taxi services for all your travel needs.</p>
             <div className="flex gap-3">
               {[FaFacebook, FaInstagram, FaWhatsapp, FaYoutube].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-lg hover:bg-accent hover:text-white hover:-translate-y-0.5 transition-all">
@@ -43,10 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white text-base font-bold mb-4">Contact Info</h4>
             <div className="space-y-3">
-              <p className="flex items-start gap-2.5 text-sm"><FiMapPin className="shrink-0 mt-0.5 text-accent" /> No. 45, Avinashi Road, Coimbatore - 641018, Tamil Nadu</p>
-              <p className="flex items-start gap-2.5 text-sm"><FiPhone className="shrink-0 mt-0.5 text-accent" /> +91 98765 43210</p>
-              <p className="flex items-start gap-2.5 text-sm"><FiPhone className="shrink-0 mt-0.5 text-accent" /> +91 87654 32109</p>
-              <p className="flex items-start gap-2.5 text-sm"><FiMail className="shrink-0 mt-0.5 text-accent" /> info@sridharsan.com</p>
+              <p className="flex items-start gap-2.5 text-sm"><FiMapPin className="shrink-0 mt-0.5 text-accent" /> Kottaipalayam, Kovilpalayam, Coimbatore - 641110 </p>
+              <p className="flex items-start gap-2.5 text-sm"><FiPhone className="shrink-0 mt-0.5 text-accent" /> +91 89734 880889</p>
+              <p className="flex items-start gap-2.5 text-sm"><FiPhone className="shrink-0 mt-0.5 text-accent" /> +91 99528 80074</p>
+              <p className="flex items-start gap-2.5 text-sm"><FiMail className="shrink-0 mt-0.5 text-accent" /> dharsansiva335@gmail.com</p>
             </div>
           </div>
         </div>
