@@ -32,11 +32,11 @@ export default function Contact() {
             <p className="text-gray-500 mb-8">We would love to hear from you. Reach out through any of these channels.</p>
             <div className="space-y-4">
               {[
-                [FiPhone, 'Phone', ['+91 98765 43210', '+91 87654 32109']],
-                [FaWhatsapp, 'WhatsApp', ['+91 98765 43210'], 'https://wa.me/919876543210'],
-                [FiMail, 'Email', ['info@sridharsan.com', 'bookings@sridharsan.com']],
-                [FiMapPin, 'Address', ['No. 45, Avinashi Road,', 'Coimbatore - 641018,', 'Tamil Nadu, India']],
-                [FiClock, 'Working Hours', ['24/7 Available', 'Office: 8 AM - 10 PM']],
+                [FiPhone, 'Phone', ['+91 89734 88089', '+91 9952880074']],
+                [FaWhatsapp, 'WhatsApp', ['+91 89734 88089'], 'https://wa.me/918973488089'],
+                [FiMail, 'Email', ['dharsansiva335@gmail.com']],
+                [FiMapPin, 'Address', ['Kottaipalayam, Kovilpalayam, Coimbatore - 641110']],
+                [FiClock, 'Working Hours', ['24/7 Available', 'Office: Always Open']],
               ].map(([Icon, title, lines, link]) => (
                 <div key={title} className="flex gap-4 bg-white p-5 rounded-xl shadow-sm border border-gray-200">
                   <Icon className={`text-2xl shrink-0 mt-1 ${title === 'WhatsApp' ? 'text-green-500' : 'text-primary'}`} />
