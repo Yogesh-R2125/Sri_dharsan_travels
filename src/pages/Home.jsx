@@ -15,7 +15,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1400')] bg-center bg-cover opacity-15" />
         <div className="relative z-10 max-w-7xl mx-auto px-5 text-center py-20 max-md:py-12 text-white w-full">
           <h1 className="font-display text-5xl max-md:text-3xl max-sm:text-2xl font-bold mb-4 leading-tight">
-            Your Trusted Reliable Partner in <span className="text-accent">Coimbatore</span>
+            Your Reliable Partner in <span className="text-accent">Coimbatore</span>
           </h1>
           <p className="text-lg max-md:text-base text-white/85 max-w-2xl mx-auto mb-8">
             Safe, reliable, and affordable taxi services for local and long distance trips across South India.
