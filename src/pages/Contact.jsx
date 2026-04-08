@@ -32,7 +32,7 @@ export default function Contact() {
             <p className="text-gray-500 mb-8">We would love to hear from you. Reach out through any of these channels.</p>
             <div className="space-y-4">
               {[
-                [FiPhone, 'Phone', ['+91 89734 88089', '+91 9952880074']],
+                [FiPhone, 'Phone', ['+91 89734 88089']],
                 [FaWhatsapp, 'WhatsApp', ['+91 89734 88089'], 'https://wa.me/918973488089'],
                 [FiMail, 'Email', ['dharsansiva335@gmail.com']],
                 [FiMapPin, 'Address', ['Kottaipalayam, Kovilpalayam, Coimbatore - 641110']],
