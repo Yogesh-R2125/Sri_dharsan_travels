@@ -45,7 +45,6 @@ export default function Footer() {
             <div className="space-y-3">
               <p className="flex items-start gap-2.5 text-sm"><FiMapPin className="shrink-0 mt-0.5 text-accent" /> Kottaipalayam, Kovilpalayam, Coimbatore - 641110 </p>
               <p className="flex items-start gap-2.5 text-sm"><FiPhone className="shrink-0 mt-0.5 text-accent" /> +91 89734 880889</p>
-              <p className="flex items-start gap-2.5 text-sm"><FiPhone className="shrink-0 mt-0.5 text-accent" /> +91 99528 80074</p>
               <p className="flex items-start gap-2.5 text-sm"><FiMail className="shrink-0 mt-0.5 text-accent" /> dharsansiva335@gmail.com</p>
             </div>
           </div>
